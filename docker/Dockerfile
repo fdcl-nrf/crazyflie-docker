@@ -21,5 +21,5 @@ RUN : \
 RUN python3.8 -m venv /venv
 ENV PATH=/venv/bin:$PATH
 
-RUN git clone git@github.com:fdcl-nrf/crazyflie-lib-python.git
+RUN git clone https://github.com/fdcl-nrf/crazyflie-lib-python.git
 RUN cd crazyflie-lib-python && pip install -e .
