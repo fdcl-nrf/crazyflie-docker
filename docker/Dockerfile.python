@@ -9,7 +9,7 @@ RUN : \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 	python3.8-venv \
 	# Utilities
-	&& apt-get install -y git vim \
+	&& apt-get install -y git vim usbutils \
 	# https://www.bitcraze.io/documentation/repository/crazyflie-firmware/master/building-and-flashing/build/
 	# CF: install a toolchain
 	&& add-apt-repository -y ppa:team-gcc-arm-embedded/ppa \

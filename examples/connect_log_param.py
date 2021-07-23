@@ -40,7 +40,7 @@ def simple_log_async(scf, logconf):
 
 
 def log_stab_callback(timestamp, data, logconf):
-    print("[{}][{}]: {}".format(timestamp, logconf.name, data))
+    print("[{}][{}]: {:10.8f}".format(timestamp, logconf.name, data["acc.z"]))
 
 
 if __name__ == '__main__':
@@ -48,12 +48,9 @@ if __name__ == '__main__':
     cflib.crtp.init_drivers()
 
     lg_stab = LogConfig(name='Stabilizer', period_in_ms=10)
-    lg_stab.add_variable('stabilizer.roll', 'float')
-    lg_stab.add_variable('stabilizer.pitch', 'float')
-    lg_stab.add_variable('stabilizer.yaw', 'float')
-    lg_stab.add_variable('mag.x', 'float')
-    lg_stab.add_variable('mag.y', 'float')
-    lg_stab.add_variable('mag.z', 'float')
+    lg_stab.add_variable('acc.x', 'float')
+    lg_stab.add_variable('acc.y', "float")
+    lg_stab.add_variable('acc.z', 'float')
 
     with SyncCrazyflie(uri, cf=Crazyflie(rw_cache='./cache')) as scf:
         # simple_connect()
