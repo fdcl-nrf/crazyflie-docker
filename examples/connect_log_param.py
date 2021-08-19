@@ -53,6 +53,6 @@ if __name__ == '__main__':
     lg_stab.add_variable('acc.z', 'float')
 
     with SyncCrazyflie(uri, cf=Crazyflie(rw_cache='./cache')) as scf:
-        # simple_connect()
+        # simple_connec()
         # simple_log(scf, lg_stab)
         simple_log_async(scf, lg_stab)
